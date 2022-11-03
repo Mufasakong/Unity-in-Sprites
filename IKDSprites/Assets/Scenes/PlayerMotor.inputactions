@@ -1,0 +1,12 @@
+{
+    "name": "PlayerMotor",
+    "maps": [
+        {
+            "name": "InGame",
+            "id": "2733a81c-28d2-4f4f-821f-571a3c62708f",
+            "actions": [],
+            "bindings": []
+        }
+    ],
+    "controlSchemes": []
+}
