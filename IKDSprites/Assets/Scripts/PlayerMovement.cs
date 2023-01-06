@@ -24,17 +24,18 @@ public class PlayerMovement : MonoBehaviour
         myAnimation = GetComponent<Animator>();
     }
 
+    //Update is called once every frame
     void Update() {
        Vector3 currentPos = myTransform.position;
 
-        // Set the object's position to the other side of the boundary if it has crossed either boundary on the x-axis or y-axis
+        // Set the players position to the other side
         currentPos.x = currentPos.x > 10 ? -10 : (currentPos.x < -10 ? 10 : currentPos.x);
         currentPos.y = currentPos.y > 7 ? -7 : (currentPos.y < -7 ? 7 : currentPos.y);
 
         myTransform.position = currentPos;
     } 
 
-    // Update is called once per frame
+    // Updates animation based on movement
     private void OnMovement(InputValue value)
     {
         movement = value.Get<Vector2>();
@@ -50,9 +51,10 @@ public class PlayerMovement : MonoBehaviour
     }
 
     private void FixedUpdate(){
-        myBody.velocity = movement * speed;
+        myBody.velocity = movement * speed; //Updates the speed of the player
+        
         /*if (Input.GetKeyDown(KeyCode.Space)) {  
-        myBody.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+        myBody.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse); //Weak jump attempt
         }*/
     }
 
